@@ -9,18 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-    // MARK: Properties
-    @IBOutlet var resultLabel: UILabel!
-    @IBOutlet var stepper: UIStepper!
-    @IBOutlet var slider: UISlider!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let mainView = MainView(frame: CGRect.zero)
+        self.view.addSubview(mainView)
     }
-    
-    
-
-
 }
 
