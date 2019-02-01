@@ -9,10 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var firstOperandResultLabel: UILabel!
+    var secondOperandResultLabel: UILabel!
+    var calculateButton: UIButton!
+    
+    var firstOperandValue: String = "22"
+    var secondOperandValue: String = "33"
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
         let mainView = MainView(frame: CGRect.zero)
-        self.view.addSubview(mainView)
+        self.view = mainView
+        self.firstOperandResultLabel = mainView.firstOperandResultLabel
+        self.secondOperandResultLabel = mainView.secondOperandResultLabel
+        self.calculateButton = mainView.calculateButton
+        self.firstOperandResultLabel.text = self.firstOperandValue
+        self.secondOperandResultLabel.text = self.secondOperandValue
+        super.viewDidLoad()
     }
 }
 
