@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		B6A72CEE2203211B000729AD /* First_TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A72CED2203211B000729AD /* First_TaskTests.swift */; };
 		B6A72CF92203211B000729AD /* First_TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A72CF82203211B000729AD /* First_TaskUITests.swift */; };
 		B6F8328A220467D500DB0C0E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F83289220467D500DB0C0E /* MainView.swift */; };
+		BFDF1EC222057BE100699FDC /* FirstOperandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF1EC122057BE100699FDC /* FirstOperandView.swift */; };
+		BFDF1EC422057D7F00699FDC /* SecondOperandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF1EC322057D7F00699FDC /* SecondOperandView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,19 +36,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B6A72CD522032119000729AD /* First Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "First Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6A72CD522032119000729AD /* FirstTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A72CD822032119000729AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6A72CDA22032119000729AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B6A72CDF2203211A000729AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6A72CE22203211A000729AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B6A72CE42203211A000729AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B6A72CE92203211B000729AD /* First TaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "First TaskTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6A72CE92203211B000729AD /* FirstTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirstTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A72CED2203211B000729AD /* First_TaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = First_TaskTests.swift; sourceTree = "<group>"; };
 		B6A72CEF2203211B000729AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B6A72CF42203211B000729AD /* First TaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "First TaskUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6A72CF42203211B000729AD /* FirstTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirstTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A72CF82203211B000729AD /* First_TaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = First_TaskUITests.swift; sourceTree = "<group>"; };
 		B6A72CFA2203211B000729AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6F83289220467D500DB0C0E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		BFDF1EC122057BE100699FDC /* FirstOperandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOperandView.swift; sourceTree = "<group>"; };
+		BFDF1EC322057D7F00699FDC /* SecondOperandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOperandView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +81,9 @@
 		B6A72CCC22032118000729AD = {
 			isa = PBXGroup;
 			children = (
-				B6A72CD722032119000729AD /* First Task */,
-				B6A72CEC2203211B000729AD /* First TaskTests */,
-				B6A72CF72203211B000729AD /* First TaskUITests */,
+				B6A72CD722032119000729AD /* FirstTask */,
+				B6A72CEC2203211B000729AD /* FirstTaskTests */,
+				B6A72CF72203211B000729AD /* FirstTaskUITests */,
 				B6A72CD622032119000729AD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,50 +91,52 @@
 		B6A72CD622032119000729AD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B6A72CD522032119000729AD /* First Task.app */,
-				B6A72CE92203211B000729AD /* First TaskTests.xctest */,
-				B6A72CF42203211B000729AD /* First TaskUITests.xctest */,
+				B6A72CD522032119000729AD /* FirstTask.app */,
+				B6A72CE92203211B000729AD /* FirstTaskTests.xctest */,
+				B6A72CF42203211B000729AD /* FirstTaskUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B6A72CD722032119000729AD /* First Task */ = {
+		B6A72CD722032119000729AD /* FirstTask */ = {
 			isa = PBXGroup;
 			children = (
 				B6A72CD822032119000729AD /* AppDelegate.swift */,
 				B6F83289220467D500DB0C0E /* MainView.swift */,
+				BFDF1EC122057BE100699FDC /* FirstOperandView.swift */,
+				BFDF1EC322057D7F00699FDC /* SecondOperandView.swift */,
 				B6A72CDA22032119000729AD /* ViewController.swift */,
 				B6A72CDF2203211A000729AD /* Assets.xcassets */,
 				B6A72CE12203211A000729AD /* LaunchScreen.storyboard */,
 				B6A72CE42203211A000729AD /* Info.plist */,
 			);
-			path = "First Task";
+			path = FirstTask;
 			sourceTree = "<group>";
 		};
-		B6A72CEC2203211B000729AD /* First TaskTests */ = {
+		B6A72CEC2203211B000729AD /* FirstTaskTests */ = {
 			isa = PBXGroup;
 			children = (
 				B6A72CED2203211B000729AD /* First_TaskTests.swift */,
 				B6A72CEF2203211B000729AD /* Info.plist */,
 			);
-			path = "First TaskTests";
+			path = FirstTaskTests;
 			sourceTree = "<group>";
 		};
-		B6A72CF72203211B000729AD /* First TaskUITests */ = {
+		B6A72CF72203211B000729AD /* FirstTaskUITests */ = {
 			isa = PBXGroup;
 			children = (
 				B6A72CF82203211B000729AD /* First_TaskUITests.swift */,
 				B6A72CFA2203211B000729AD /* Info.plist */,
 			);
-			path = "First TaskUITests";
+			path = FirstTaskUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B6A72CD422032119000729AD /* First Task */ = {
+		B6A72CD422032119000729AD /* FirstTask */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B6A72CFD2203211B000729AD /* Build configuration list for PBXNativeTarget "First Task" */;
+			buildConfigurationList = B6A72CFD2203211B000729AD /* Build configuration list for PBXNativeTarget "FirstTask" */;
 			buildPhases = (
 				B6A72CD122032119000729AD /* Sources */,
 				B6A72CD222032119000729AD /* Frameworks */,
@@ -140,14 +146,14 @@
 			);
 			dependencies = (
 			);
-			name = "First Task";
+			name = FirstTask;
 			productName = "First Task";
-			productReference = B6A72CD522032119000729AD /* First Task.app */;
+			productReference = B6A72CD522032119000729AD /* FirstTask.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B6A72CE82203211B000729AD /* First TaskTests */ = {
+		B6A72CE82203211B000729AD /* FirstTaskTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B6A72D002203211B000729AD /* Build configuration list for PBXNativeTarget "First TaskTests" */;
+			buildConfigurationList = B6A72D002203211B000729AD /* Build configuration list for PBXNativeTarget "FirstTaskTests" */;
 			buildPhases = (
 				B6A72CE52203211B000729AD /* Sources */,
 				B6A72CE62203211B000729AD /* Frameworks */,
@@ -158,14 +164,14 @@
 			dependencies = (
 				B6A72CEB2203211B000729AD /* PBXTargetDependency */,
 			);
-			name = "First TaskTests";
+			name = FirstTaskTests;
 			productName = "First TaskTests";
-			productReference = B6A72CE92203211B000729AD /* First TaskTests.xctest */;
+			productReference = B6A72CE92203211B000729AD /* FirstTaskTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		B6A72CF32203211B000729AD /* First TaskUITests */ = {
+		B6A72CF32203211B000729AD /* FirstTaskUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B6A72D032203211B000729AD /* Build configuration list for PBXNativeTarget "First TaskUITests" */;
+			buildConfigurationList = B6A72D032203211B000729AD /* Build configuration list for PBXNativeTarget "FirstTaskUITests" */;
 			buildPhases = (
 				B6A72CF02203211B000729AD /* Sources */,
 				B6A72CF12203211B000729AD /* Frameworks */,
@@ -176,9 +182,9 @@
 			dependencies = (
 				B6A72CF62203211B000729AD /* PBXTargetDependency */,
 			);
-			name = "First TaskUITests";
+			name = FirstTaskUITests;
 			productName = "First TaskUITests";
-			productReference = B6A72CF42203211B000729AD /* First TaskUITests.xctest */;
+			productReference = B6A72CF42203211B000729AD /* FirstTaskUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -204,8 +210,8 @@
 					};
 				};
 			};
-			buildConfigurationList = B6A72CD022032118000729AD /* Build configuration list for PBXProject "First Task" */;
-			compatibilityVersion = "Xcode 9.3";
+			buildConfigurationList = B6A72CD022032118000729AD /* Build configuration list for PBXProject "FirstTask" */;
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -217,9 +223,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B6A72CD422032119000729AD /* First Task */,
-				B6A72CE82203211B000729AD /* First TaskTests */,
-				B6A72CF32203211B000729AD /* First TaskUITests */,
+				B6A72CD422032119000729AD /* FirstTask */,
+				B6A72CE82203211B000729AD /* FirstTaskTests */,
+				B6A72CF32203211B000729AD /* FirstTaskUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -256,6 +262,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6A72CDB22032119000729AD /* ViewController.swift in Sources */,
+				BFDF1EC422057D7F00699FDC /* SecondOperandView.swift in Sources */,
+				BFDF1EC222057BE100699FDC /* FirstOperandView.swift in Sources */,
 				B6F8328A220467D500DB0C0E /* MainView.swift in Sources */,
 				B6A72CD922032119000729AD /* AppDelegate.swift in Sources */,
 			);
@@ -282,12 +290,12 @@
 /* Begin PBXTargetDependency section */
 		B6A72CEB2203211B000729AD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B6A72CD422032119000729AD /* First Task */;
+			target = B6A72CD422032119000729AD /* FirstTask */;
 			targetProxy = B6A72CEA2203211B000729AD /* PBXContainerItemProxy */;
 		};
 		B6A72CF62203211B000729AD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B6A72CD422032119000729AD /* First Task */;
+			target = B6A72CD422032119000729AD /* FirstTask */;
 			targetProxy = B6A72CF52203211B000729AD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -426,7 +434,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PRB6FRYD3J;
-				INFOPLIST_FILE = "First Task/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/FirstTask/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -445,7 +453,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PRB6FRYD3J;
-				INFOPLIST_FILE = "First Task/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/FirstTask/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -543,7 +551,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B6A72CD022032118000729AD /* Build configuration list for PBXProject "First Task" */ = {
+		B6A72CD022032118000729AD /* Build configuration list for PBXProject "FirstTask" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B6A72CFB2203211B000729AD /* Debug */,
@@ -552,7 +560,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B6A72CFD2203211B000729AD /* Build configuration list for PBXNativeTarget "First Task" */ = {
+		B6A72CFD2203211B000729AD /* Build configuration list for PBXNativeTarget "FirstTask" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B6A72CFE2203211B000729AD /* Debug */,
@@ -561,7 +569,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B6A72D002203211B000729AD /* Build configuration list for PBXNativeTarget "First TaskTests" */ = {
+		B6A72D002203211B000729AD /* Build configuration list for PBXNativeTarget "FirstTaskTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B6A72D012203211B000729AD /* Debug */,
@@ -570,7 +578,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B6A72D032203211B000729AD /* Build configuration list for PBXNativeTarget "First TaskUITests" */ = {
+		B6A72D032203211B000729AD /* Build configuration list for PBXNativeTarget "FirstTaskUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B6A72D042203211B000729AD /* Debug */,

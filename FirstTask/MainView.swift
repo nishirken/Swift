@@ -9,78 +9,65 @@
 import UIKit
 
 class MainView: UIView {
-    let segmentedControl: UISegmentedControl = {
-        let control = UISegmentedControl(items: ["-", "+"])
-        control.frame = CGRect(x: 200, y: 200, width: 100, height: 32)
-        control.tintColor = UIColor(named: "Primary")
-        return control
+    public static let sidePadding = 16
+    public static let topPadding = 32
+    public static let bottomPadding = 16
+    public static let resultLabelHeight = 60
+    public static let labelFontSize = 17
+    public static let fullWidth: Int = {
+        return Int(UIScreen.main.bounds.width) - MainView.sidePadding * 2
     }()
+    
+    public var firstOperandView: FirstOperandView!
+    public var secondOperandView: SecondOperandView!
     
     let calculateButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setTitle("Calculate", for: .normal)
         button.backgroundColor = UIColor(named: "Primary")
         button.setTitleColor(.white, for: .normal)
-        button.frame = CGRect(x: 16, y: 400, width: 100, height: 60)
+        let buttonHeight = 60
+        let y = Int(UIScreen.main.bounds.height) - MainView.bottomPadding - buttonHeight
+        button.frame = CGRect(x: MainView.sidePadding, y: y, width: MainView.fullWidth, height: 60)
         return button
     }()
     
     let resultLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = UIColor(named: "InputBackground")
-        label.frame = CGRect(x: 16, y: 32, width: 200, height: 60)
         label.textColor = .black
+        label.textAlignment = .right
         label.font = UIFont(name: label.font.fontName, size: 32)
+        label.frame = CGRect(x: MainView.sidePadding, y: MainView.topPadding, width: MainView.fullWidth, height: 60)
         return label
     }()
     
-    let firstOperandLabel: UILabel = {
-        let label = UILabel()
-        label.text = "First operand"
-        label.textColor = .white
-        label.frame = CGRect(x: 16, y: 100, width: 200, height: 20)
-        return label
-    }()
-    
-    let secondOperandLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Second operand"
-        label.textColor = .white
-        label.frame = CGRect(x: 16, y: 150, width: 200, height: 20)
-        return label
-    }()
-    
-    let firstOperandResultLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .white
-        label.frame = CGRect(x: 16, y: 130, width: 200, height: 20)
-        return label
-    }()
-    
-    let secondOperandResultLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .white
-        label.frame = CGRect(x: 16, y: 180, width: 200, height: 20)
-        return label
-    }()
+    private func styleMainView() {
+        self.backgroundColor = UIColor(named: "Background")
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor(named: "Background")
-        self.addSubview(self.segmentedControl)
-        self.addSubview(self.calculateButton)
+        self.styleMainView()
         self.addSubview(self.resultLabel)
-        self.addSubview(self.firstOperandLabel)
-        self.addSubview(self.secondOperandLabel)
-        self.addSubview(self.firstOperandResultLabel)
-        self.addSubview(self.secondOperandResultLabel)
+        self.addSubview(self.calculateButton)
+        self.firstOperandView = FirstOperandView(frame: CGRect(
+            x: MainView.sidePadding,
+            y: MainView.topPadding + MainView.resultLabelHeight + 32,
+            width: MainView.fullWidth,
+            height: 17 + 16 + FirstOperandView.segmentedControlHeight
+        ))
+        self.addSubview(self.firstOperandView)
+        self.secondOperandView = SecondOperandView(frame: CGRect(
+            x: MainView.sidePadding,
+            y: MainView.topPadding + MainView.resultLabelHeight + 32 + Int(firstOperandView.bounds.height) + 32,
+            width: MainView.fullWidth,
+            height: 17 + 16 + SecondOperandView.sliderHeight
+        ))
+        self.addSubview(self.secondOperandView)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-    }
-    
-    override func updateConstraints() {
-        super.updateConstraints()
     }
 }
