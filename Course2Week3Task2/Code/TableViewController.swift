@@ -8,23 +8,28 @@
 import UIKit
 
 class TableViewController: UITableViewController {
-    @IBOutlet var table: UITableView!
-    private let identifier = String(describing: TableViewController.self)
-    private var photos = PhotoProvider().photos()
+//    @IBOutlet weak var table: UITableView!
     
+    private let identifier = "TableViewController"
+    private var photos = PhotoProvider().photos()
+
     override func viewDidLoad() {
-        self.table.register(UINib(
-            nibName: self.identifier, bundle: nil), forCellReuseIdentifier: self.identifier)
+        self.tableView.register(UINib(
+            nibName: self.identifier, bundle: nil), forCellReuseIdentifier: "ViewCell")
         super.viewDidLoad()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.photos.count
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:CellData = tableView.dequeueReusableCell(withIdentifier: "CellData") as! CellData
-        cell.textLabel?.text = self.data[indexPath.row]
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ViewCell", for: indexPath) as! ViewCell
+//        cell.label?.text = self.photos[indexPath.row].name
         return cell
     }
 }
