@@ -2,15 +2,20 @@
 //  TableViewCell.swift
 //  Course2Week3Task2
 //
-//  Created by Дмитрий Скурихин on 04.02.2019.
+//  Created by Shadow on 04/02/2019.
 //  Copyright © 2019 e-Legion. All rights reserved.
 //
 
 import UIKit
 
-class ViewCell: UITableViewCell {
-//    @IBOutlet weak var label: UILabel!
-//    @IBOutlet weak var photo: UIImageView!
+class TableViewCell: UITableViewCell {
+    @IBOutlet var photo: UIImageView!
+    @IBOutlet var label: UILabel!
+    @IBOutlet var button: UIButton!
+    
+    @IBAction func buttonClick(_ sender: Any) {
+        print("Accessory selected")
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
