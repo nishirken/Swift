@@ -15,7 +15,8 @@ class ViewController: UIViewController {
     var slider: UISlider!
     var calculateButton: UIButton!
     var resultLabel: UILabel!
-    let formatter: NumberFormatter = NumberFormatter()
+    let resultFormatter: NumberFormatter = NumberFormatter()
+    let operandFormatter: NumberFormatter = NumberFormatter()
     
     var firstOperandValue: Double = 0.0000
     var secondOperandValue: Float = 0.0000
@@ -42,24 +43,30 @@ class ViewController: UIViewController {
         self.calculateButton.addTarget(self, action: #selector(self.calculate), for: .touchUpInside)
         self.slider.addTarget(self, action: #selector(self.changeSecondValue), for: .valueChanged)
         self.segmentedControl.addTarget(self, action: #selector(self.changeFirstValue), for: .valueChanged)
-        self.formatter.maximumFractionDigits = 4
-        self.formatter.minimumFractionDigits = 0
-        self.formatter.numberStyle = .decimal
+        self.configureFormatter(formatter: self.resultFormatter, minDigits: 0)
+        self.configureFormatter(formatter: self.operandFormatter, minDigits: 4)
         super.viewDidLoad()
     }
     
+    private func configureFormatter(formatter: NumberFormatter, minDigits: Int) {
+        formatter.maximumFractionDigits = 4
+        formatter.minimumFractionDigits = minDigits
+        formatter.numberStyle = .decimal
+    }
+    
     @objc private func calculate(sender: UIButton!) {
-        self.resultLabel.text = self.formatter.string(from: NSNumber(value: Float(self.firstOperandValue) * self.secondOperandValue))
+        self.resultLabel.text =
+            self.resultFormatter.string(from: NSNumber(value: Float(self.firstOperandValue) * self.secondOperandValue))
     }
     
     @objc private func changeSecondValue(sender: UISlider!) {
         self.secondOperandValue = sender.value
-        self.secondOperandResultLabel.text = self.formatter.string(from: NSNumber(value: sender.value))
+        self.secondOperandResultLabel.text = self.operandFormatter.string(from: NSNumber(value: self.secondOperandValue))
     }
     
     @objc private func changeFirstValue(sender: UIStepper!) {
         self.firstOperandValue = sender.value
-        self.firstOperandResultLabel.text = self.formatter.string(from: NSNumber(value: self.firstOperandValue))
+        self.firstOperandResultLabel.text = self.operandFormatter.string(from: NSNumber(value: self.firstOperandValue))
     }
 }
 
