@@ -38,9 +38,13 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> TableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
-         cell.label?.text = self.photos[indexPath.row].name
+        cell.label?.text = self.photos[indexPath.row].name
         cell.photo?.image = self.photos[indexPath.row].image
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Row selected")
     }
 
     /*
