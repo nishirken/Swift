@@ -14,35 +14,37 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         static let photoLabelBackgroundAlpha: CGFloat = 0.7
     }
     
-    @IBOutlet weak var photoImageView: UIImageView!
-    @IBOutlet weak var photoNameLabel: UILabel!
+    @IBOutlet var photoImageView: UIImageView!
+    @IBOutlet var photoNameLabel: UILabel!
     
     // MARK: - Override
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        photoNameLabel.backgroundColor = UIColor.white.withAlphaComponent(Const.photoLabelBackgroundAlpha)
-        photoImageView.contentMode = .scaleAspectFill
+        self.backgroundColor = .green
+        print(self.photoNameLabel)
+//        photoNameLabel.backgroundColor = UIColor.white.withAlphaComponent(Const.photoLabelBackgroundAlpha)
+//        photoImageView.contentMode = .scaleAspectFill
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        photoImageView.frame = bounds
-        photoNameLabel.frame = CGRect(x: 0,
-                                      y: frame.height - Const.photoLabelHeight,
-                                      width: frame.width,
-                                      height: Const.photoLabelHeight)
+        print(self.photoNameLabel)
+//        photoImageView.frame = bounds
+//        photoNameLabel.frame = CGRect(x: 0,
+//                                      y: frame.height - Const.photoLabelHeight,
+//                                      width: frame.width,
+//                                      height: Const.photoLabelHeight)
     }
     
     // MARK: - Public
     
     func configure(with photo: Photo) {
-        photoImageView.image = photo.image
-        
-        photoNameLabel.text = photo.name
-        photoNameLabel.sizeToFit()
+        print(self.photoNameLabel)
+//        photoImageView.image = photo.image
+//
+//        photoNameLabel.text = photo.name
+//        photoNameLabel.sizeToFit()
         
         setNeedsLayout()
     }

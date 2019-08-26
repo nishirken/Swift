@@ -7,6 +7,11 @@
 
 import UIKit
 
-class CustomFlowLayout: UICollectionViewLayout {
-    
+class CustomFlowLayout: UICollectionViewFlowLayout {
+    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+                print("attrs")
+        let attrs = super.layoutAttributesForItem(at: indexPath)
+
+        return attrs
+    }
 }
