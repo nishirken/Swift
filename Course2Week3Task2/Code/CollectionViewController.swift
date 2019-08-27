@@ -16,6 +16,10 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.collectionView?.register(
+            UINib(nibName:"PhotoCollectionViewCell", bundle: nil),
+            forCellWithReuseIdentifier: "PhotoCollectionViewCell"
+        )
     }
     
     override func viewWillAppear(_ animated: Bool) {
