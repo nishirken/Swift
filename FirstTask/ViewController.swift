@@ -44,10 +44,10 @@ class ViewController: UIViewController {
         self.resultLabel = mainView.resultLabel
         self.slider = mainView.secondOperandView.slider
         self.segmentedControl = mainView.firstOperandView.segmentedControl
-        self.slider.minimumValue = 1
+        self.slider.minimumValue = Float(self.secondOperandValue)
         self.slider.maximumValue = 100
         self.slider.value = Float(self.secondOperandValue)
-        self.segmentedControl.minimumValue = 0
+        self.segmentedControl.minimumValue = self.firstOperandValue
         self.segmentedControl.maximumValue = 10
         self.segmentedControl.stepValue = 0.5
         self.calculateButton.addTarget(self, action: #selector(self.calculate), for: .touchUpInside)
