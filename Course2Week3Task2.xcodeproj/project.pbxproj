@@ -34,6 +34,7 @@
 		74012C59201F7AED007ADE9C /* CustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74012C58201F7AED007ADE9C /* CustomFlowLayout.swift */; };
 		74012C5C201F7D1F007ADE9C /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74012C5A201F7D1F007ADE9C /* PhotoCollectionViewCell.swift */; };
 		74012C5D201F7D1F007ADE9C /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74012C5B201F7D1F007ADE9C /* PhotoCollectionViewCell.xib */; };
+		BF47B6EC2315D6300076C673 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF47B6EB2315D6300076C673 /* CollectionViewDataSource.swift */; };
 		BFDF1EC82208BBA700699FDC /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF1EC72208BBA700699FDC /* TableViewCell.swift */; };
 		BFDF1ECA2208CB2300699FDC /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF1EC92208CB2300699FDC /* TableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -68,6 +69,7 @@
 		74012C58201F7AED007ADE9C /* CustomFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFlowLayout.swift; sourceTree = "<group>"; };
 		74012C5A201F7D1F007ADE9C /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		74012C5B201F7D1F007ADE9C /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		BF47B6EB2315D6300076C673 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
 		BFDF1EC72208BBA700699FDC /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		BFDF1EC92208CB2300699FDC /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +137,7 @@
 				74012C2F201F5790007ADE9C /* CollectionViewController.swift */,
 				BFDF1EC92208CB2300699FDC /* TableViewController.swift */,
 				74012C58201F7AED007ADE9C /* CustomFlowLayout.swift */,
+				BF47B6EB2315D6300076C673 /* CollectionViewDataSource.swift */,
 				BFDF1EC72208BBA700699FDC /* TableViewCell.swift */,
 			);
 			path = Code;
@@ -270,6 +273,7 @@
 				BFDF1EC82208BBA700699FDC /* TableViewCell.swift in Sources */,
 				74012C34201F61DC007ADE9C /* PhotoProvider.swift in Sources */,
 				BFDF1ECA2208CB2300699FDC /* TableViewController.swift in Sources */,
+				BF47B6EC2315D6300076C673 /* CollectionViewDataSource.swift in Sources */,
 				74012C30201F5790007ADE9C /* CollectionViewController.swift in Sources */,
 				74012C15201F5315007ADE9C /* AppDelegate.swift in Sources */,
 				74012C5C201F7D1F007ADE9C /* PhotoCollectionViewCell.swift in Sources */,
