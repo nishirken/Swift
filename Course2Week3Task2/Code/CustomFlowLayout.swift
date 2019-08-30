@@ -11,6 +11,10 @@ class CustomFlowLayout: UICollectionViewFlowLayout, UICollectionViewDelegateFlow
     private let layoutPadding: CGFloat = 16.0
     private let spaceBetweenColumns: CGFloat = 16.0
     private let spaceBetweenLines: CGFloat = 16.0
+    private var leftColumnHeight: CGFloat = 0
+    private var rightColumnHeight: CGFloat = 0
+    private var cachedAttributes: [UICollectionViewLayoutAttributes] = []
+    private var cachedIndexPaths: [IndexPath] = []
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -35,5 +39,42 @@ class CustomFlowLayout: UICollectionViewFlowLayout, UICollectionViewDelegateFlow
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return self.spaceBetweenColumns
+    }
+    
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        guard let attrs = super.layoutAttributesForElements(in: rect) else {
+            return nil
+        }
+        let onlyNew = attrs.filter { !self.cachedIndexPaths.contains($0.indexPath) }
+        let copiedAttributes = onlyNew.map { $0.copy() } as! [UICollectionViewLayoutAttributes]
+        
+        for attr in copiedAttributes {
+            if (attr.representedElementCategory == .cell) {
+                if (self.leftColumnHeight <= self.rightColumnHeight) {
+                    self.pushToLeftColumn(attr: attr)
+                } else {
+                    self.pushToRightColumn(attr: attr)
+                }
+            }
+        }
+
+        return self.cachedAttributes
+    }
+
+    private func pushToLeftColumn(attr: UICollectionViewLayoutAttributes) {
+        attr.frame = CGRect(x: self.layoutPadding, y: self.leftColumnHeight, width: attr.frame.width, height: attr.frame.height)
+        self.saveAttribute(attr: attr)
+        self.leftColumnHeight += (attr.frame.height + self.spaceBetweenLines)
+    }
+    
+    private func pushToRightColumn(attr: UICollectionViewLayoutAttributes) {
+        attr.frame = CGRect(x: self.layoutPadding + attr.frame.width + self.spaceBetweenColumns, y: self.rightColumnHeight, width: attr.frame.width, height: attr.frame.height)
+        self.saveAttribute(attr: attr)
+        self.rightColumnHeight += (attr.frame.height + self.spaceBetweenLines)
+    }
+    
+    private func saveAttribute(attr: UICollectionViewLayoutAttributes) {
+        self.cachedAttributes.append(attr)
+        self.cachedIndexPaths.append(attr.indexPath)
     }
 }
